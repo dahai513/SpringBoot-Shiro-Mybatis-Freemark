@@ -1,10 +1,13 @@
 package com.itheima.service.impl;
 
+import com.itheima.domain.Perms;
 import com.itheima.domain.User;
 import com.itheima.mapper.UserMapper;
 import com.itheima.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,6 +17,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByname(String username) {
-        return userMapper.finUsername( username );
+        return userMapper.findUsername( username );
+    }
+
+    @Override
+    public List<Perms> findPerms(int userid) {
+        return userMapper.findPerms( userid );
     }
 }
