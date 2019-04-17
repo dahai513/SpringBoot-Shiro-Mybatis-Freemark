@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserMapper {
 
-    @Select( "select id,username,password from users where username=#{username} " )
+    @Select( "select id,username,password,password_salt from users where username=#{username} " )
     public User findUsername(String username);
 
     @Select( "select id,userid,perm from perms where userid=#{userid} " )

@@ -56,11 +56,7 @@
       <!--<groupId>org.springframework.boot</groupId>-->
       <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
     <!--</dependency>-->
-    <!-- 引入freeMarker的依赖包-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-freemarker</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -76,7 +72,17 @@
       <version>1.4.0</version>
     </dependency>
 
-
+    <!-- 引入freeMarker的依赖包-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-freemarker</artifactId>
+    </dependency>
+    <!--freemark的shiro依赖-->
+    <dependency>
+    <groupId>net.mingsoft</groupId>
+    <artifactId>shiro-freemarker-tags</artifactId>
+    <version>0.1</version>
+  </dependency>
   </dependencies>
 
 </project>
