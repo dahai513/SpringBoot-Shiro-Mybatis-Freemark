@@ -1,15 +1,37 @@
 server:
   port: 1100
   context-path: /data
+
 spring:
+  application:
+    name: springboot_shiro
+
+#   数据库的配置
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/shiro
     username: root
     password: xudahai513
     type: com.alibaba.druid.pool.DruidDataSource
+
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+
+#  三个参数主要是用于“并发量的配置”，表示：并发消费者的初始化值，
+#  并发消费者的最大值，每个消费者每次监听时可拉取处理的消息数量。
+    listener:
+      concurrency: 10
+      max-concurrency: 20
+      prefetch: 5
+
 mybatis:
   type-aliases-package: com.itheima.domain
 
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8800/eureka/
 

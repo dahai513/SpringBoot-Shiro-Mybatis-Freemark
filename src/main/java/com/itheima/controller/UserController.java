@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.amqb.send.MqMsgSend;
 import com.itheima.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -7,6 +8,7 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,6 +81,19 @@ public class UserController {
             return "login";
         }
     }
+
+    /**
+     * 测试mq Send
+     */
+    @Autowired
+    private MqMsgSend msgSend;
+    @RequestMapping("send")
+    public String send1() {
+        System.out.println("****************** 验证码********************************");
+        msgSend.send(  );
+        return "index";
+    }
+
 }
 
 

@@ -10,5 +10,10 @@
         密码：<input type="password" name="password">
          <input type="submit">
     </form>
+    <form method="post" action="login">
+        用户名：<input type="text" name="name"><br>
+        密码：<input type="password" name="password">
+        <input type="submit">
+    </form>
 </body>
 </html>

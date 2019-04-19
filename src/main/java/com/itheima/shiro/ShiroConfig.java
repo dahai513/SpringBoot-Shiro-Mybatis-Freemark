@@ -96,7 +96,9 @@ public class ShiroConfig {
     }
 
     /**
-     * 创建Realm
+     *
+     * 创建userRealm ，这是个自定义的认证类，继承自AuthorizingRealm，
+     * 负责用户的认证和权限的处理
      */
     @Bean(name = "userRealm")
     public UserRealm getRealm(@Qualifier("credentialsMatcher")HashedCredentialsMatcher credentialsMatcher) {
